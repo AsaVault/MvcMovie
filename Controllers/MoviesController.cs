@@ -41,6 +41,11 @@ namespace MvcMovie.Controllers
                 movies = movies.Where(x => x.Genre == movieGenre);
             }
 
+            if (true)
+            {
+                movies = movies.OrderByDescending(x => x.ID);
+            }
+
             return View(movies);
         }
 
@@ -62,7 +67,7 @@ namespace MvcMovie.Controllers
         // GET: Movies/Create
         public ActionResult Create()
         {
-            return View();
+            return View(new Movie());
         }
 
         // POST: Movies/Create
